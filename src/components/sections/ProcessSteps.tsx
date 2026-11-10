@@ -1,15 +1,16 @@
+import type { ReactNode } from "react";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 type Block = {
-  eyebrow: string;
+  eyebrow?: string;
   titleRed: string;
   titleNavy: string;
   steps: readonly { title: string; text: string }[];
 };
 
 /** Numbered steps joined by a dashed line on wide screens. */
-export default function ProcessSteps({ block, tinted = false }: { block: Block; tinted?: boolean }) {
+export default function ProcessSteps({ block, tinted = false, action }: { block: Block; tinted?: boolean; action?: ReactNode }) {
   const cols = block.steps.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4";
   return (
     <section className={`py-24 ${tinted ? "bg-mist/60" : ""}`}>
@@ -33,6 +34,7 @@ export default function ProcessSteps({ block, tinted = false }: { block: Block; 
             ))}
           </ol>
         </div>
+        {action && <div className="mt-14 flex justify-center">{action}</div>}
       </div>
     </section>
   );

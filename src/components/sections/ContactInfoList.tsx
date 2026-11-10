@@ -2,10 +2,12 @@ import { contactInfo } from "@/data/site";
 import { icons } from "@/components/ui/icons";
 
 /** Address / email / phone list shown next to forms. */
-export default function ContactInfoList() {
+type Item = { icon: string; title: string; lines: readonly string[]; href?: string };
+
+export default function ContactInfoList({ items = contactInfo }: { items?: readonly Item[] }) {
   return (
     <ul className="space-y-4">
-      {contactInfo.map((c) => {
+      {items.map((c) => {
         const Icon = icons[c.icon];
         const body = (
           <>
@@ -23,7 +25,7 @@ export default function ContactInfoList() {
         const cls = "group flex items-start gap-4 rounded-2xl border border-line bg-white p-5 transition hover:border-transparent hover:shadow-card";
         return (
           <li key={c.title}>
-            {"href" in c ? <a href={c.href} className={cls}>{body}</a> : <div className={cls}>{body}</div>}
+            {c.href ? <a href={c.href} className={cls}>{body}</a> : <div className={cls}>{body}</div>}
           </li>
         );
       })}

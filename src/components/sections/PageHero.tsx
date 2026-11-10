@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -7,7 +8,7 @@ import { routes } from "@/lib/routes";
 type Hero = { eyebrow: string; titleRed: string; titleNavy: string; text: string };
 
 /** Light banner at the top of every inner page, with a breadcrumb. */
-export default function PageHero({ hero, crumb }: { hero: Hero; crumb: string }) {
+export default function PageHero({ hero, crumb, actions }: { hero: Hero; crumb: string; actions?: ReactNode }) {
   return (
     <section className="relative overflow-hidden bg-mist/70">
       <div className="stripes absolute -right-10 -top-10 h-64 w-64 rounded-full opacity-20" />
@@ -27,6 +28,7 @@ export default function PageHero({ hero, crumb }: { hero: Hero; crumb: string })
           </nav>
           <SectionHeading as="h1" eyebrow={hero.eyebrow} red={hero.titleRed} navy={hero.titleNavy} />
           <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-ink/75">{hero.text}</p>
+          {actions && <div className="mt-9 flex flex-wrap gap-4">{actions}</div>}
         </Reveal>
       </div>
     </section>

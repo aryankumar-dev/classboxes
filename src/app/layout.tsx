@@ -3,6 +3,7 @@ import { Mukta, Mukta_Vaani } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
+import Preloader from "@/components/layout/Preloader";
 import "./globals.css";
 
 const mukta = Mukta({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${mukta.variable} ${muktaVaani.variable} antialiased`}>
+        <Preloader />
         <Header />
         <main>{children}</main>
         <Footer />

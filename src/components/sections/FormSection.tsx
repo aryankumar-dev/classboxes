@@ -4,7 +4,9 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import type { Field } from "@/data/forms";
 import ContactInfoList from "./ContactInfoList";
 
-type Copy = { eyebrow: string; titleRed: string; titleNavy: string; text: string; submit?: string };
+type InfoItem = Parameters<typeof ContactInfoList>[0]["items"];
+
+type Copy = { eyebrow?: string; titleRed: string; titleNavy: string; text: string; submit?: string };
 
 /** Heading + contact info on the left, form card on the right. Used at the bottom of inner pages. */
 export default function FormSection({
@@ -12,11 +14,13 @@ export default function FormSection({
   copy,
   fields,
   tinted = true,
+  info,
 }: {
   id?: string;
   copy: Copy;
   fields: Field[];
   tinted?: boolean;
+  info?: InfoItem;
 }) {
   return (
     <section id={id} className={`scroll-mt-24 py-24 ${tinted ? "bg-mist/60" : ""}`}>
@@ -25,7 +29,7 @@ export default function FormSection({
           <SectionHeading eyebrow={copy.eyebrow} red={copy.titleRed} navy={copy.titleNavy} />
           <p className="mt-5 max-w-md text-[16px] leading-relaxed text-ink/75">{copy.text}</p>
           <div className="mt-9">
-            <ContactInfoList />
+            <ContactInfoList items={info} />
           </div>
         </Reveal>
         <Reveal x={40} y={0} delay={0.1}>

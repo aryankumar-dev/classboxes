@@ -1,45 +1,54 @@
+// Find Talent page copy — use word for word as supplied by the client.
 export const findTalentPage = {
   hero: {
-    eyebrow: "For employers",
-    titleRed: "Hire Right Staff",
-    titleNavy: "For Your Team",
-    text: "We source, screen and supply job-ready candidates so you can build the team you need — faster and with less risk.",
+    eyebrow: "FINDING TALENT IS NOW EASIER",
+    titleRed: "Hire the Best Talent",
+    titleNavy: "at Zero Cost with ClassBoxes",
+    text: "Connect with pre-assessed, job-ready professionals across multiple technologies, with no hiring fees.",
+    primaryCta: "Drop Requirements",
+    secondaryCta: "Contact Us",
   },
-  intro: {
-    eyebrow: "Staffing solutions",
-    titleRed: "A recruitment partner",
-    titleNavy: "that knows your industry",
-    paragraphs: [
-      "ClassBoxes is a recruitment company in New Jersey, USA that sources, screens and supplies job candidates to companies. We work with businesses across industries to understand their staffing needs.",
-      "Our recruiters bring real industry expertise and offer customised staffing solutions — every candidate we put forward has been assessed for the skills your role needs.",
-    ],
-    points: ["Pre-screened & skill-tested", "Contract, contract-to-hire and full-time", "Dedicated account manager"],
-  },
-  services: {
-    eyebrow: "How we hire for you",
-    titleRed: "Staffing models",
-    titleNavy: "that fit your plan",
-    cards: [
-      { icon: "clock", title: "Contract Staffing", text: "Skilled professionals for projects and peak workloads, on your timeline." },
-      { icon: "repeat", title: "Contract-to-Hire", text: "Try the fit before you commit — convert to full-time when you're ready." },
-      { icon: "badge", title: "Full-time Hiring", text: "Permanent hires, pre-screened and skill-tested before they reach you." },
-      { icon: "users", title: "Team Scaling", text: "Build out a whole team quickly with a dedicated account manager." },
-    ],
-  },
+  stats: [
+    { value: 8, suffix: "+", label: "Years of Experience", icon: "calendar" },
+    { value: 100, suffix: "+", label: "Top Recruiters", icon: "briefcase" },
+    { value: 1000, suffix: "+", label: "Happy Candidates", icon: "smile" },
+    { value: 10, suffix: "+", label: "Technologies Covered", icon: "cpu" },
+  ],
   process: {
-    eyebrow: "Simple process",
-    titleRed: "From requirement",
-    titleNavy: "to hire",
+    titleRed: "How it",
+    titleNavy: "works",
     steps: [
-      { title: "Share your requirement", text: "Tell us about the role, skills and timeline." },
+      { title: "Share your requirement", text: "Tell us about the role, skills and timeline. It's free." },
       { title: "We shortlist", text: "Pre-assessed candidates matched to your needs." },
-      { title: "You interview", text: "Meet the shortlist — we handle the scheduling." },
-      { title: "Hire & onboard", text: "We support you until the fit is right." },
+      { title: "You interview", text: "Meet the shortlist. We handle the scheduling." },
+      { title: "Hire & onboard", text: "Candidates can join immediately, with 12 months of support after hiring." },
+    ],
+    cta: "Drop Requirements",
+  },
+  why: {
+    titleRed: "Why hire from",
+    titleNavy: "ClassBoxes?",
+    items: [
+      { icon: "award", label: "High-quality candidates" },
+      { icon: "zap", label: "Immediate joining" },
+      { icon: "piggy", label: "Zero hiring cost" },
+      { icon: "headset", label: "12-month support" },
+      { icon: "layers", label: "Multiple technologies" },
     ],
   },
-  cta: {
-    title: "Ready to hire?",
-    text: "Share your requirement and get a shortlist of qualified candidates.",
-    button: "Share Your Requirement",
+  tech: {
+    titleRed: "Candidates in",
+    titleNavy: "multiple technologies",
+    items: ["PHP Developer", "Java Developer", "React Developer", "Python Developer"],
+  },
+  contact: {
+    titleRed: "Get in",
+    titleNavy: "Touch",
+    text: "Have a hiring need? Contact us anytime.",
+    info: [
+      { icon: "map", title: "Address", lines: ["371 Hoes Lane, #200, Piscataway, New Jersey 08854"] },
+      { icon: "mail", title: "Email", lines: ["info@classboxes.com"], href: "mailto:info@classboxes.com" },
+      { icon: "phone", title: "Phone", lines: ["+1-551-355-5230"], href: "tel:+15513555230" },
+    ],
   },
 } as const;
