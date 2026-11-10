@@ -7,5 +7,7 @@ export const routes = {
   shareRequirement: "/share-your-requirement",
   testSkills: "/test-your-skills",
   contact: "/contact-us",
+  search: "/search",
+  blogs: "/#blogs",
   privacy: "#",
 } as const;

@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
     // Placeholder photos until real assets are exported from the live site.
     remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
+  // Old WordPress-style search links (/?s=java) go to the new search page; the query string is kept.
+  async redirects() {
+    return [{ source: "/", has: [{ type: "query", key: "s" }], destination: "/search", permanent: true }];
+  },
   turbopack: {
     rules: {
       "*.css": {
