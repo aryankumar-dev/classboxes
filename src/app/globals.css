@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #ed4c59;
+  --color-brand-dark: #d93a48;
+  --color-brand-soft: #fdecee;
+  --color-navy: #323743;
+  --color-navy-deep: #262a33;
+  --color-ink: #181818;
+  --color-muted: #6b7080;
+  --color-mist: #f2f2f4;
+  --color-line: #e6e6ea;
+
+  --font-heading: var(--font-mukta), system-ui, sans-serif;
+  --font-sans: var(--font-mukta-vaani), system-ui, sans-serif;
+
+  --shadow-soft: 0 10px 40px -12px rgb(50 55 67 / 0.18);
+  --shadow-card: 0 2px 6px rgb(50 55 67 / 0.04), 0 18px 40px -20px rgb(50 55 67 / 0.22);
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Red diagonal-stripe accent used for decorative circles */
+.stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-brand) 0 2px,
+    transparent 2px 9px
+  );
+}
+
+.stripes-navy {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-navy) 0 2px,
+    transparent 2px 9px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee { animation: none; }
+}
+
+@utility container-x {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @media (width >= 640px) { padding-inline: 2rem; }
+}
