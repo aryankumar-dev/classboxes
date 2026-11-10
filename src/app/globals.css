@@ -27,6 +27,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Light theme only: stop browsers from applying dark mode to the site. */
+  color-scheme: light only;
 }
 
 body {

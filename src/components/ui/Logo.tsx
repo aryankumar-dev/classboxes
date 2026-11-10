@@ -6,7 +6,7 @@ import Link from "next/link";
  */
 export default function Logo({ light = false, className = "" }: { light?: boolean; className?: string }) {
   return (
-    <Link href="#top" aria-label="ClassBoxes home" className={`inline-flex items-center gap-2 ${className}`}>
+    <Link href="/" aria-label="ClassBoxes home" className={`inline-flex items-center gap-2 ${className}`}>
       <svg viewBox="0 0 48 48" className="h-10 w-10 shrink-0" aria-hidden>
         {/* book */}
         <path d="M33 4.5l4.5 2v6.5L33 11z M37.5 6.5L42 4.5V11l-4.5 2z" fill="#ED4C59" />

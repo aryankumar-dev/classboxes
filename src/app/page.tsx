@@ -9,17 +9,18 @@ import Offices from "@/components/home/Offices";
 import Blogs from "@/components/home/Blogs";
 import Newsletter from "@/components/home/Newsletter";
 import { jobOpenings, needCandidates, testSkills } from "@/data/home";
+import { routes } from "@/lib/routes";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <About />
-      <SplitSection id="candidates" content={needCandidates} illustration="handshake" ctaHref="#offices" tinted />
+      <SplitSection id="candidates" content={needCandidates} illustration="handshake" ctaHref={routes.shareRequirement} tinted />
       <Clients />
       <HrCta />
-      <SplitSection id="jobs" content={jobOpenings} illustration="job" reverse ctaHref="#offices" ctaVariant="navy" />
-      <SplitSection id="skills" content={testSkills} illustration="skills" ctaHref="#offices" tinted />
+      <SplitSection id="jobs" content={jobOpenings} illustration="job" reverse ctaHref={routes.findJob} ctaVariant="navy" />
+      <SplitSection id="skills" content={testSkills} illustration="skills" ctaHref={routes.testSkills} tinted />
       <Portfolio />
       <Testimonials />
       <Offices />

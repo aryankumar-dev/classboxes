@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { ArrowUp, MessageCircle } from "lucide-react";
+import { routes } from "@/lib/routes";
 
 export default function FloatingActions() {
   const [showTop, setShowTop] = useState(false);
@@ -29,13 +31,13 @@ export default function FloatingActions() {
           </motion.button>
         )}
       </AnimatePresence>
-      <a
-        href="#offices"
+      <Link
+        href={routes.contact}
         className="inline-flex items-center gap-2 rounded-full bg-[#25a55f] py-3 pl-4 pr-5 text-sm font-bold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-[#1f8f52]"
       >
         <MessageCircle className="h-5 w-5" />
         Send message
-      </a>
+      </Link>
     </div>
   );
 }

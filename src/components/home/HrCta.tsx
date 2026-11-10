@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 import { hrCta } from "@/data/home";
+import { routes } from "@/lib/routes";
 
 export default function HrCta() {
   return (
@@ -17,7 +18,7 @@ export default function HrCta() {
                 </h2>
                 <p className="mt-2 text-white/70">{hrCta.text}</p>
               </div>
-              <Button href="#offices" variant="red" arrow className="shrink-0">
+              <Button href={routes.contact} variant="red" arrow className="shrink-0">
                 {hrCta.cta}
               </Button>
             </div>

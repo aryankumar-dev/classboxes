@@ -2,15 +2,19 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Phone, Mail, ArrowUpRight } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
-import { contact, navLinks } from "@/data/home";
+import { contact, navLinks } from "@/data/site";
+import { routes } from "@/lib/routes";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -59,12 +63,17 @@ export default function Header() {
           </div>
           <nav className="hidden items-center gap-8 lg:flex">
             {navLinks.map((l) => (
-              <Link key={l.label} href={l.href} className="text-[15px] font-semibold text-navy transition hover:text-brand">
+              <Link
+                key={l.label}
+                href={l.href}
+                aria-current={isActive(l.href) ? "page" : undefined}
+                className={`relative py-2 text-[15px] font-semibold transition hover:text-brand after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] after:rounded-full after:bg-brand after:transition-transform ${isActive(l.href) ? "text-brand after:scale-x-100" : "text-navy after:scale-x-0"}`}
+              >
                 {l.label}
               </Link>
             ))}
           </nav>
-          <Button href="#candidates" className="hidden md:inline-flex">
+          <Button href={routes.findTalent} className="hidden md:inline-flex">
             Hire Talent
           </Button>
         </div>
@@ -112,7 +121,8 @@ export default function Header() {
                     <Link
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="group flex items-center justify-between border-b border-line py-4 font-heading text-xl font-bold text-navy hover:text-brand"
+                      aria-current={isActive(l.href) ? "page" : undefined}
+                      className={`group flex items-center justify-between border-b border-line py-4 font-heading text-xl font-bold hover:text-brand ${isActive(l.href) ? "text-brand" : "text-navy"}`}
                     >
                       {l.label}
                       <ArrowUpRight className="h-5 w-5 text-muted transition group-hover:text-brand" />

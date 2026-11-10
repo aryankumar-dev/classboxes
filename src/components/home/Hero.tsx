@@ -9,6 +9,7 @@ import { BadgeCheck, Users } from "lucide-react";
 import Button from "@/components/ui/Button";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { heroSlides } from "@/data/home";
+import { routes } from "@/lib/routes";
 
 export default function Hero() {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 7000, stopOnInteraction: true })]);
@@ -42,8 +43,8 @@ export default function Hero() {
                   <SectionHeading as="h1" eyebrow={s.eyebrow} red={s.titleRed} navy={s.titleNavy} />
                   <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-ink/75">{s.text}</p>
                   <div className="mt-9 flex flex-wrap gap-4">
-                    <Button href="#candidates" variant="red" arrow>Share Your Requirements</Button>
-                    <Button href="#offices" variant="navy">Contact Us Now</Button>
+                    <Button href={routes.shareRequirement} variant="red" arrow>Share Your Requirements</Button>
+                    <Button href={routes.contact} variant="navy">Contact Us Now</Button>
                   </div>
                   <div className="mt-10 flex items-center gap-6 text-sm text-muted">
                     <span className="inline-flex items-center gap-2"><BadgeCheck className="h-5 w-5 text-brand" />Pre-screened talent</span>

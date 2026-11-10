@@ -1,33 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { animate, useInView } from "framer-motion";
 import { Users, BookOpen, Award, Headset } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
+import Counter from "@/components/ui/Counter";
 import { about } from "@/data/home";
 
 const icons = { users: Users, book: BookOpen, award: Award, headset: Headset };
-
-function Counter({ to, suffix }: { to: number; suffix: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [val, setVal] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-    const c = animate(0, to, { duration: 1.8, ease: "easeOut", onUpdate: (v) => setVal(Math.round(v)) });
-    return () => c.stop();
-  }, [inView, to]);
-
-  return (
-    <span ref={ref}>
-      {val.toLocaleString()}
-      {suffix}
-    </span>
-  );
-}
 
 export default function About() {
   return (

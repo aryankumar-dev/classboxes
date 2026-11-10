@@ -1,20 +1,5 @@
-// All home page copy lives here so it can be edited without touching components.
-
-export const contact = {
-  phone: "+1-551-355-5230",
-  phoneHref: "tel:+15513555230",
-  email: "info@classboxes.com",
-  website: "www.classboxes.com",
-  hq: "371 Hoes Lane, #200, Piscataway, NJ 08854",
-};
-
-export const navLinks = [
-  { label: "About us", href: "#about" },
-  { label: "Find a Job", href: "#jobs" },
-  { label: "Find Talent", href: "#candidates" },
-  { label: "Test your Skills", href: "#skills" },
-  { label: "Contact Us", href: "#offices" },
-];
+// Home page copy. Shared content (contact, nav, footer) lives in ./site.ts.
+import { routes } from "@/lib/routes";
 
 export const heroSlides = [
   {
@@ -42,9 +27,9 @@ export const about = {
   // Rewritten in one voice ("we") throughout.
   paragraph: [
     { text: "ClassBoxes is a " },
-    { text: "recruitment company in New Jersey, USA", href: "#about" },
+    { text: "recruitment company in New Jersey, USA", href: routes.about },
     { text: " that helps businesses of every size find the right people. We combine training, skill assessment and " },
-    { text: "staffing solutions", href: "#candidates" },
+    { text: "staffing solutions", href: routes.findTalent },
     { text: " so that every candidate we place is ready to contribute from day one — and every client gets a long-term hiring partner, not just a résumé." },
   ],
   stats: [
@@ -139,8 +124,8 @@ export const offices = {
   titleRed: "Need",
   titleNavy: "Assistance?",
   items: [
-    { icon: "building", title: "New Jersey Office", lines: ["371 Hoes Lane, #200,", "Piscataway, NJ 08854"] },
-    { icon: "map", title: "Canada Office", lines: ["5 Place Ville Marie Bureau 1400,", "Montréal, QC H3B 2G2"] },
+    { icon: "building", title: "New Jersey Office", lines: ["371 Hoes Lane, #200,", "Piscataway, New Jersey, USA - 08854"] },
+    { icon: "map", title: "Canada Office", lines: ["5 Place Ville Marie Bureau 1400,", "Montréal, Quebec H3B 2G2"] },
     { icon: "mail", title: "Email", lines: ["info@classboxes.com"], href: "mailto:info@classboxes.com" },
     { icon: "phone", title: "Call", lines: ["+1-551-355-5230"], href: "tel:+15513555230" },
   ],
@@ -180,26 +165,3 @@ export const newsletter = {
   text: "Job openings, hiring tips and new courses — delivered once a month. No spam.",
   cta: "Subscribe Now",
 };
-
-export const footer = {
-  solutions: [
-    { label: "Find Talent", href: "#candidates" },
-    { label: "Find a Job", href: "#jobs" },
-    { label: "Share your Requirements", href: "#candidates" },
-    { label: "Test your Skills", href: "#skills" },
-    { label: "Contact Us", href: "#offices" },
-  ],
-  bottomLinks: [
-    { label: "Home", href: "#top" },
-    { label: "About Us", href: "#about" },
-    { label: "Blogs", href: "#blogs" },
-    { label: "Privacy Policy", href: "#" },
-  ],
-  socials: [
-    { label: "Facebook", href: "#", icon: "facebook" },
-    { label: "X", href: "#", icon: "x" },
-    { label: "YouTube", href: "#", icon: "youtube" },
-    { label: "LinkedIn", href: "#", icon: "linkedin" },
-    { label: "Instagram", href: "#", icon: "instagram" },
-  ],
-} as const;
